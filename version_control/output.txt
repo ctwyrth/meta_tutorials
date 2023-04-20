@@ -1,0 +1,5 @@
+total 8
+drwxr-xr-x  3 tjlxndr  staff  96 Apr 20 09:28 archive
+-rw-r--r--  1 tjlxndr  staff  34 Apr 20 09:48 input.txt
+-rw-r--r--  1 tjlxndr  staff   0 Apr 20 09:49 output.txt
+drwxr-xr-x  2 tjlxndr  staff  64 Apr 20 09:26 projects
