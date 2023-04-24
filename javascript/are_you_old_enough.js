@@ -9,3 +9,11 @@ if (age >= 65) {
 } else {
   console.log("The value of the age type is not numerical.");
 }
+
+
+const foo = () => {
+  console.log("First");
+};
+
+setTimeout(foo, 0);
+console.log("Second");
