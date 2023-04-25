@@ -1,0 +1,93 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  text-align: center;
+  background-color: lightgray;
+}
+
+header {
+  margin-top: .5rem;
+}
+
+nav ul {
+  list-style: none;
+  margin: 1rem 0;
+}
+
+nav ul li {
+  display: inline;
+  margin: 0 .25rem;
+}
+
+main {
+  margin-top: 1.75rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+h1, h2 {
+  color: brown;
+}
+
+article {
+  margin-top: 1.5rem;
+}
+
+article p {
+  margin-top: 1rem;
+  font-size: 1.125rem;
+}
+
+footer {
+  margin: 1.125rem 0 1rem;
+  font-size: .95rem;
+}
+
+form {
+  margin-top: 1.25rem;
+  width: 450px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-fields {
+  width: 200px;
+  padding: 0 5px;
+  margin-bottom: 1rem;
+}
+
+label {
+  display: block;
+  margin-bottom: .125rem;
+}
+
+fieldset {
+  padding: .25rem;
+}
+
+.booking-label {
+  display: inline;
+  padding: 0 .5rem;
+}
+
+input {
+  font-size: 1rem;
+  padding: .125rem .25rem;
+}
+
+input:focus:invalid {
+  border: 2px solid red;
+}
+
+button {
+  margin: .5rem 0;
+  padding: .125rem .25rem;
+}
