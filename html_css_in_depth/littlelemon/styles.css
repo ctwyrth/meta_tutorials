@@ -64,6 +64,15 @@ form {
   margin-bottom: 1rem;
 }
 
+.input-fields_booking {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 5px;
+  margin-bottom: 1rem;
+}
+
 label {
   display: block;
   margin-bottom: .125rem;
@@ -90,4 +99,8 @@ input:focus:invalid {
 button {
   margin: .5rem 0;
   padding: .125rem .25rem;
+}
+
+output {
+  margin-left: .5rem;
 }

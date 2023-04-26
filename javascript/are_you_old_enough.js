@@ -11,9 +11,21 @@ if (age >= 65) {
 }
 
 
-const foo = () => {
-  console.log("First");
-};
+// const foo = () => {
+//   console.log("First");
+// };
 
-setTimeout(foo, 0);
-console.log("Second");
+// setTimeout(foo, 0);
+// console.log("Second");
+
+// let person = {
+//   toString: function () {
+//     return "20";
+//   },
+//   valueOf: function () {
+//     return 30
+//   }
+// };
+// console.log(person.toString());
+// console.log(person.valueOf());
+// console.log(+person);

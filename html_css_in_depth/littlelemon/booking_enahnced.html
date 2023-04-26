@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Little Lemon Booking</title>
+
+    <link rel="stylesheet" href="styles.css">
+  </head>
+
+  <body>
+    <header>
+      <img src="../../css_basics/logo.png" alt="Little Lemon Logo">
+    </header>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="location.html">Location</a></li>
+        <li><a href="blog.html">Blog</a></li>
+      </ul>
+    </nav>
+    <main>
+      <h1>Book a Table</h1>
+      <form action="/" method="POST">
+        <div class="input-fields_booking">
+          <label for="booking_date" class="booking-label">Booking Date:</label>
+          <input type="date" name="booking_date" id="booking_date">
+        </div>
+        <div class="input-fields_booking">
+          <label for="booking_people" class="booking-label">Number of People:</label>
+          <input type="range" name="booking_people" id="booking_people" min="1" max="10" value="4" oninput="this.nextElementSibling.value = this.value">
+          <output>4</output>
+        </div>
+        <div class="input-fields_booking">
+          <label for="booking_location" class="booking-label">Location:</label>
+          <input name="booking_location" id="booking_location" list="locations">
+          <datalist id="locations">
+            <option value="Downtown"></option>
+            <option value="Uptown"></option>
+          </datalist>
+        </div>
+        <button type="submit">Book Table</button>
+      </form>
+    </main>
+    <footer>
+      <p>Copyright Little Lemon</p>
+    </footer>
+  </body>
+</html>
