@@ -104,3 +104,16 @@ button {
 output {
   margin-left: .5rem;
 }
+
+main p {
+  margin: 1.5rem auto;
+  width: 450px;
+}
+
+video {
+  margin-top: 1.5rem;
+}
+
+iframe {
+  margin-bottom: 1.5rem;
+}

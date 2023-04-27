@@ -9,3 +9,7 @@ console.log(100 == "100");
 console.log(100 === "100");
 console.log(1 != "1");
 console.log(1 !== "1");
+
+
+// const test = 1<<3;
+// console.log(test);
