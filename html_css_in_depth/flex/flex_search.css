@@ -1,0 +1,30 @@
+body {
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex: 0 1 400px;
+  border-radius: 10px;
+  border: 1px solid #ccc;
+  overflow: hidden;
+}
+
+.icon {
+  padding: 0.5rem;
+}
+
+.searchBox {
+  border: 0;
+  flex: 1;
+  padding-left: 0.5rem;
+}
+
+.searchBtn {
+  color: white;
+  background: #0f4a8a;
+  border: 0;
+  padding: 0.8rem;
+  border-top-right-radius: 8px;
+  border-bottom-right-radius: 8px;
+}
