@@ -10,6 +10,7 @@ if (age >= 65) {
   console.log("The value of the age type is not numerical.");
 }
 
+console.log(null == undefined);
 
 // const foo = () => {
 //   console.log("First");
