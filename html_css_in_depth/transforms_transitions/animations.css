@@ -1,0 +1,36 @@
+@keyframes bounce {
+  0% {
+    transform: translate3d(0, 0, 0);
+  }
+
+  50% {
+    transform: translate3d(320px, 0, 320px) scale(1.5);
+  }
+
+  100% {
+    transform: translate3d(640px, 0, 0);
+  }
+}
+
+body {
+  padding: 50px;
+}
+
+#ball {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  background-color: #626876;
+  animation: bounce 5s linear infinite alternate;
+}
+
+.center {
+  width: 2px;
+  height: 2px;
+  background-color: black;
+  border-radius: 50%;
+  z-index: 5;
+}
