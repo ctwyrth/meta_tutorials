@@ -93,7 +93,7 @@ input {
 }
 
 input:focus:invalid {
-  border: 2px solid red;
+  border: 2px solid #ff00ff;
 }
 
 button {
