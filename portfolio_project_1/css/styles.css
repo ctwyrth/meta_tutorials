@@ -11,7 +11,7 @@ body {
 header {
   display: flex;
   width: 100%;
-  height: 125px;
+  height: 135px;
   flex-direction: column;
   justify-content: space-evenly;
   align-items: center;
@@ -19,7 +19,8 @@ header {
 }
 
 header img {
-  width: 50vw;
+  width: 65vw;
+  margin-bottom: .375rem;
 }
 
 header p {
@@ -27,11 +28,11 @@ header p {
 }
 
 nav {
-  background-color: #000;
+  background-color: #1c1c1c;
   display: flex;
+  justify-content: center;
   height: 2.5rem;
   box-shadow: -2px 0 10px rgba(0, 0, 0, 0.75), 2px 0 10px rgba(0, 0, 0, 0.75);
-  /* margin-bottom: 1.25rem; */
   z-index: 5;
 }
 
@@ -40,7 +41,7 @@ nav ul {
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0 auto;
+  /* margin: 0 auto; */
 }
 
 nav ul li {
@@ -60,10 +61,13 @@ nav ul li a {
   align-items: center;
 }
 
-nav ul li a:hover {
-  color: #2b2b2b;
-  background: whitesmoke;
-  box-shadow: -2px 0 30px rgba(0, 0, 0, 0.5), 2px 0 30px rgba(0, 0, 0, 0.5);
+nav ul li a.active {
+  color: lightskyblue;
+}
+
+nav ul li a:hover, nav ul li a.active:hover {
+  color: pink;
+  /* box-shadow: -2px 0 30px rgba(0, 0, 0, 0.5), 2px 0 30px rgba(0, 0, 0, 0.5); */
 }
 
 main {
@@ -77,7 +81,7 @@ main {
 main #hero {
   margin: 0 0 2rem;
   width: 100%;
-  height: 35vw;
+  height: 45vw;
   background-image: url(../assets/pearl_necklace.jpg);
   background-size: cover;
   background-position: bottom right;
@@ -90,44 +94,73 @@ main #hero {
 main #hero h1 {
   font-family: 'Times New Roman', Times, serif;
   font-style: italic;
-  font-size: 3.5rem;
-  color: gold;
+  font-size: 4.5vw;
+  color: pink;
   text-shadow: 2px 2px 12px black;
-  margin-right: 5rem;
-  margin-bottom: 3rem;
+  margin-right: 6vw;
+  margin-bottom: 4vw;
 }
 
 main #recents {
+  position: relative;
+  width: 95%;
   display: flex;
+  flex-direction: row;
   justify-content: space-evenly;
   align-items: center;
-  padding: 0 1.25rem;
-  margin: .5rem 0 1.5rem;
+  flex-wrap: wrap;
+  margin: 1.5rem 0 2.5rem;
 }
 
-main #recents article {
-  padding: .75rem;
+article {
+  flex: 0 0 400px;
+  border: 1px solid lightgray;
+  margin: .25rem .25rem 2.25rem;
+  overflow: hidden;
+  box-shadow: 1px 1px 16px rgba(0, 0, 0, 0.45);
+}
+
+article:hover {
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.75);
+  transform: scale(1.05);
+}
+
+article .art-img img {
+  width: 100%;
+}
+
+article .art-body {
+  background-color: white;
+  padding: 1rem .75rem 1.25rem;
+}
+
+article .art-body h2 {
+  color: #3c3c3c;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.55);
+  margin-bottom: .75rem;
 }
 
 footer {
   width: 100%;
-  background: black;
+  background: #1c1c1c;
+}
+
+footer .ftr-body {
+  width: 90%;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /* position: absolute;
-  left: 0;
-  bottom: 0; */
   padding: .75rem 3.25rem;
+  margin: 0 auto;
 }
 
 footer .btm-logo {
-  padding: .25rem;
+  padding: .375rem .25rem .25rem;
   /* margin-right: 5rem; */
 }
 
 footer .btm-logo img {
-  height: 80px;
+  height: 100px;
 }
 
 footer .copyright {
