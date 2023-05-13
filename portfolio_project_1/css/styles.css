@@ -91,14 +91,25 @@ main #hero {
   z-index: -1;
 }
 
-main #hero h1 {
+main #hero .hero-txt {
+  width: 100%;
+  text-align: right;
+  margin-right: 5vw;
+  margin-bottom: 4vw;
+}
+
+main #hero .hero-txt h1 {
   font-family: 'Times New Roman', Times, serif;
   font-style: italic;
   font-size: 4.5vw;
   color: pink;
   text-shadow: 2px 2px 12px black;
-  margin-right: 6vw;
-  margin-bottom: 4vw;
+}
+
+main #hero .hero-txt p {
+  color: whitesmoke;
+  font-size: 2vw;
+  text-shadow: 2px 2px 12px black;
 }
 
 main #recents {
