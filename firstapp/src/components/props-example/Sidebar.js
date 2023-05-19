@@ -1,9 +1,11 @@
 import React from 'react';
 
-function Sidebar(props) {
+function Sidebar() {
   return (
-    <h2>{props.greet} from Sidebar</h2>
-  );
-};
+    <aside className="sidebar-component">
+      <h2>Sidebar content here</h2>
+    </aside>
+  )
+}
 
 export default Sidebar;

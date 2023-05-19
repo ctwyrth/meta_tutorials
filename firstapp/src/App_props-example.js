@@ -6,6 +6,11 @@ import Sidebar from './components/props-example/Sidebar';
 function App() {
   return (
     <div className="App">
+      <Header />
+      <div className="App-content">
+        <Main userName="Nick" num={5} />
+        <Sidebar />
+      </div>
     </div>
   );
 }

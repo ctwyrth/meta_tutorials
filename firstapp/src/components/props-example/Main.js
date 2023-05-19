@@ -2,7 +2,10 @@ import React from 'react';
 
 function Main(props) {
   return (
-    <h2>{props.greet} from Main</h2>
+    <main>
+      <h2>Hello, {props.userName}</h2>
+      <p>You are in position no. {props.num}</p>
+    </main>
   );
 };
 

@@ -3,3 +3,40 @@
   padding: 0;
   box-sizing: border-box;
 }
+
+.App {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: calc(100vh - 160px);
+}
+
+.App-content {
+  flex-direction: row;
+}
+
+div {
+  display: flex;
+  flex-direction: column;
+  min-height: calc(100vh - 160px);
+}
+
+div div {
+  flex-direction: row;
+  margin-top: 10px;
+}
+
+main {
+  width: calc(70% - 10px);
+  background: lightgoldenrodyellow;
+}
+
+header {
+  
+}
+
+aside {
+  background: azure;
+  width: calc(30% - 10px);
+  margin-left: 10px;
+}
