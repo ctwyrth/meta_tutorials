@@ -1,11 +1,16 @@
 import './App.css';
-import Header from './components/props-example/Header';
-import Main from './components/props-example/Main';
-import Sidebar from './components/props-example/Sidebar';
+import avatar from './assets/avatar.png';
+
+function Logo(props) {
+  const userPic = <img src={avatar} alt="user profile pic" width={props.width} />
+  return userPic;
+}
 
 function App() {
   return (
     <div className="App">
+      <h1>Hello World!</h1>
+      <Logo width="150px" />
     </div>
   );
 }
