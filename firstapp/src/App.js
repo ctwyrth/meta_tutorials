@@ -1,16 +1,20 @@
 import './App.css';
-import avatar from './assets/avatar.png';
-
-function Logo(props) {
-  const userPic = <img src={avatar} alt="user profile pic" width={props.width} />
-  return userPic;
-}
+// import Btn from './components/event_handling/Btn';
+// import ModeToggler from './components/event_handling/ModeToggler';
+// import Child from './components/parent-child-data/Child';
+// import InputComponent from './components/hooks/InputComponent';
+// import RegistrationForm from './components/hooks/RegistrationForm';
+import TextInputWithFocusButton from './components/hooks/TextInputWithFocusButton';
 
 function App() {
+  const date = new Date();
+
   return (
-    <div className="App">
-      <h1>Hello World!</h1>
-      <Logo width="150px" />
+    <div>
+      {/* <Child message={date.toLocaleTimeString() + " on " + date.toLocaleDateString()} /> */}
+      {/* <InputComponent /> */}
+      {/* <RegistrationForm /> */}
+      <TextInputWithFocusButton />
     </div>
   );
 }
