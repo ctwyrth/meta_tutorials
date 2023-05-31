@@ -1,23 +1,19 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './App.css';
-import { Route, Routes, Link } from 'react-router-dom';
 
-import Homepage from './components/react-router-dom/Homepage';
-import AboutMe from './components/react-router-dom/AboutMe';
+import rooftops from './assets/central_park_above.jpg';
 
 function App() {
-  return (
-    <div className="App">
-      <nav className="nav">
-        <Link to="/" className="nav-item">Homepage</Link>{' '}
-        <Link to="/about-me" className="nav-item">About Me</Link>
-      </nav>
-      <Routes>
-        <Route path="/" element={<Homepage />} />
-        <Route path="/about-me" element={<AboutMe />} />
-      </Routes>
-    </div>
-  );
+  const randomImageUrl = "https://picsum.photos/400/265";
+  return <img src={randomImageUrl} alt="random" height={200} />
+  // (
+    // <div className="App">
+    //   <h1>Task: add three images with some styling</h1>
+    //   <img src={rooftops} alt="central park from overhead" height={200} />
+    //   <img src={require("./assets/central_park_above.jpg")} alt="central park from overhead" height={200} />
+    //   <img src={randomImageUrl} alt="random" height={200} />
+    // </div>
+  // );
 }
 
 export default App;
