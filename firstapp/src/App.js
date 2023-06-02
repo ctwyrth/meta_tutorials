@@ -1,15 +1,75 @@
-import React from 'react';
-import ReactPlayer from 'react-player';
-import './App.css';
+import React, { useRef , useState } from 'react';
+import './App_project.css';
 
 function App() {
-  const vidUrl = "https://www.facebook.com/facebook/videos/10153231379946729/";
+  const inputRef = useRef(null); 
+  const resultRef = useRef(null); 
+  const [result, setResult] = useState(0); 
 
-  return (
-    <div className="App">
-      <h1>React Player example</h1>
-      <ReactPlayer className="video-player" url={vidUrl} playing={false} volume={0.5} />
-    </div>
+  function plus(e) { 
+    e.preventDefault();
+    if (resultRef.current.value === null) {
+      setResult(Number(inputRef.current.value));
+    } else {
+      setResult((result) => result + Number(inputRef.current.value));
+    }
+  }; 
+
+  function minus(e) { 
+    e.preventDefault();
+    if (resultRef.current.value === null || undefined) {
+      setResult(Number(inputRef.current.value));
+    } else {
+      setResult((result) => result - Number(inputRef.current.value));
+    }
+    console.log(resultRef.current.value);
+  }
+
+  function times(e) { 
+    e.preventDefault();
+    setResult((result) => result * Number(inputRef.current.value));
+  }; 
+
+  function divide(e) { 
+    e.preventDefault();
+    setResult((result) => result / Number(inputRef.current.value));
+  };
+
+  function resetInput(e) { 
+    e.preventDefault();
+    inputRef.current.value = null;
+  }; 
+
+  function resetResult(e) { 
+    e.preventDefault();
+    setResult(0);
+    resultRef.current.value = null;
+  }; 
+
+  return ( 
+    <div className="App"> 
+      <div> 
+        <h1>Simplest Working Calculator</h1> 
+      </div> 
+      <form> 
+        <p ref={resultRef}> 
+          {result} 
+        </p> 
+        <input
+          id="currentVal"
+          pattern="[0-9]" 
+          ref={inputRef} 
+          type="number" 
+          placeholder="Type a number" 
+        /> 
+        <button onClick={plus}>add</button> 
+        <button onClick={minus}>subtract</button> 
+        <button onClick={times}>multiply</button> 
+        <button onClick={divide}>divide</button> 
+        <button onClick={resetInput}>reset input</button>
+        <button onClick={resetResult}>reset result</button>
+      </form> 
+    </div> 
   );
 }
 

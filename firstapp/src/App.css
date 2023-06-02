@@ -21,3 +21,7 @@ img {
 .video-player {
   margin: 10px;
 }
+
+button {
+  cursor: pointer;
+}
