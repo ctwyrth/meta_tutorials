@@ -8,21 +8,12 @@ function App() {
 
   function plus(e) { 
     e.preventDefault();
-    if (resultRef.current.value === null) {
-      setResult(Number(inputRef.current.value));
-    } else {
-      setResult((result) => result + Number(inputRef.current.value));
-    }
+    setResult((result) => result + Number(inputRef.current.value));
   }; 
 
   function minus(e) { 
     e.preventDefault();
-    if (resultRef.current.value === null || undefined) {
-      setResult(Number(inputRef.current.value));
-    } else {
-      setResult((result) => result - Number(inputRef.current.value));
-    }
-    console.log(resultRef.current.value);
+    setResult((result) => result - Number(inputRef.current.value));
   }
 
   function times(e) { 
