@@ -59,7 +59,11 @@ function App() {
         <button onClick={divide}>divide</button> 
         <button onClick={resetInput}>reset input</button>
         <button onClick={resetResult}>reset result</button>
-      </form> 
+      </form>
+      <div>
+        <p>alpha</p>
+      </div>
+      <p>beta</p>
     </div> 
   );
 }
