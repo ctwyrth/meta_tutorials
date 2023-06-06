@@ -1,0 +1,28 @@
+.App {
+  width: 30%
+}
+
+.App form fieldset div {
+  margin-bottom: .75rem;
+}
+
+label {
+  display: block;
+  margin-right: .25rem;
+  margin-bottom: 1rem;
+}
+
+input[type="range"] {
+  width: 100%;
+}
+
+input[type="range"]::-ms-track {
+  background: blue;
+}
+textarea {
+  width: 98%;
+}
+
+button {
+  width: 100%;
+}
