@@ -1,52 +1,86 @@
-import React, { useState } from 'react';
-import './App.css';
+import "./App.css";
+import { ThemeProvider, useTheme } from "./ThemeContext";
+import Switch from "./Switch";
+
+const Title = ({ children }) => {
+  const { theme } = useTheme();
+  return (
+    <h2
+      style={{
+        color: theme === "light" ? "black" : "white",
+      }}
+    >
+      {children}
+    </h2>
+  );
+};
+
+const Paragraph = ({ children }) => {
+  const { theme } = useTheme();
+  return (
+    <p
+      style={{
+        color: theme === "light" ? "black" : "white",
+      }}
+    >
+      {children}
+    </p>
+  );
+};
+
+const Content = () => {
+  return (
+    <div>
+      <Paragraph>
+        We are a pizza loving family. And for years, I searched and searched and
+        searched for the perfect pizza dough recipe. I tried dozens, or more.
+        And while some were good, none of them were that recipe that would
+        make me stop trying all of the others.
+      </Paragraph>
+    </div>
+  );
+};
+
+const Header = () => {
+  return (
+    <header>
+      <Title>Little Lemon 🍕</Title>
+      <Switch />
+    </header>
+  );
+};
+
+const Page = () => {
+  return (
+    <div className="Page">
+      <Title>When it comes to dough</Title>
+      <Content />
+    </div>
+  );
+};
 
 function App() {
-  const [score, setScore] = useState(10);
-  const [comment, setComment] = useState("");
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (score <= 5 && comment.length <= 10) {
-      alert("Please provide a comment explaining why the experience was poor.");
-      return;
-    }
-    console.log("Form submitted!");
-    setComment("");
-    setScore(10);
-  }
+  const { theme } = useTheme();
 
   return (
-    <div className="App">
-      <form onSubmit={handleSubmit}>
-        <fieldset>
-          <h2>Feedback Form:</h2>
-          <div className="field">
-            <label>Score: {score} ⭐️</label>
-            <input
-              type="range"
-              name="score"
-              id="score"
-              min={0}
-              max={10}
-              step={1}
-              value={score}
-              onChange={e => setScore(e.target.value)}
-            />
-          </div>
-          <div className="field">
-            <label>Comment:</label>
-            <textarea
-              name="comment"
-              id="comment"
-              value={comment}
-              onChange={e => setComment(e.target.value)}
-            ></textarea>
-          </div>
-          <button type="submit">Submit</button>
-        </fieldset>
-      </form>
+    <div
+      className="App"
+      style={{
+        backgroundColor: theme === "light" ? "white" : "black",
+      }}
+    >
+      <Header />
+      <Page />
     </div>
   );
 }
 
-export default App;
+function Root() {
+  return (
+    <ThemeProvider>
+      <App />
+    </ThemeProvider>
+  );
+}
+
+export default Root;
