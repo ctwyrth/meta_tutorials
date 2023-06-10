@@ -1,86 +1,48 @@
+import React, { useState } from 'react';
 import "./App.css";
-import { ThemeProvider, useTheme } from "./ThemeContext";
-import Switch from "./Switch";
 
-const Title = ({ children }) => {
-  const { theme } = useTheme();
-  return (
-    <h2
-      style={{
-        color: theme === "light" ? "black" : "white",
-      }}
-    >
-      {children}
-    </h2>
-  );
-};
-
-const Paragraph = ({ children }) => {
-  const { theme } = useTheme();
-  return (
-    <p
-      style={{
-        color: theme === "light" ? "black" : "white",
-      }}
-    >
-      {children}
-    </p>
-  );
-};
-
-const Content = () => {
-  return (
-    <div>
-      <Paragraph>
-        We are a pizza loving family. And for years, I searched and searched and
-        searched for the perfect pizza dough recipe. I tried dozens, or more.
-        And while some were good, none of them were that recipe that would
-        make me stop trying all of the others.
-      </Paragraph>
-    </div>
-  );
-};
-
-const Header = () => {
-  return (
-    <header>
-      <Title>Little Lemon 🍕</Title>
-      <Switch />
-    </header>
-  );
-};
-
-const Page = () => {
-  return (
-    <div className="Page">
-      <Title>When it comes to dough</Title>
-      <Content />
-    </div>
-  );
-};
-
-function App() {
-  const { theme } = useTheme();
+const GoalForm = (props) => {
+  const [formData, setFormData] = useState({goal: "", by: ""});
+  const changeHandler = (e) => { setFormData({ ...formData, [e.target.name]: e.target.value }); };
+  const submitHandler = (e) => { 
+    e.preventDefault();
+    props.onAdd(formData);
+    setFormData({ goal: "", by: "" });
+  };
 
   return (
-    <div
-      className="App"
-      style={{
-        backgroundColor: theme === "light" ? "white" : "black",
-      }}
-    >
-      <Header />
-      <Page />
-    </div>
-  );
+    <>
+      <h1>My Little Lemon Goals</h1>
+      <form onSubmit={submitHandler}>
+        <input type="text" name="goal" id="goal" placeholder="Goal" value={formData.goal} onChange={changeHandler} />
+        <input type="text" name="by" id="by" placeholder="By" value={formData.by} onChange={changeHandler} />
+        <button type="submit">Submit Goal</button>
+      </form>
+    </>
+  )
 }
 
-function Root() {
+const ListOfGoals = (props) => {
+  // const [ allGoals ] = props.allGoals;
+  console.log(typeof props.allGoals);
+
   return (
-    <ThemeProvider>
-      <App />
-    </ThemeProvider>
-  );
+    <ul>
+      {props.allGoals?.map((goal, idx) => (
+        <li key={idx}>{goal.by}'s goal is to → {goal.goal}</li>
+      ))}
+    </ul>
+  )
 }
 
-export default Root;
+export default function App() {
+  const [allGoals, setAllGoals] = useState([]);
+  const addGoal = (goal) => { setAllGoals([...allGoals, goal]); };
+
+  return (
+    <div className="App">
+      <GoalForm onAdd={addGoal} />
+      <ListOfGoals allGoals={allGoals} />
+    </div>
+  );
+};
