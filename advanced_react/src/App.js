@@ -1,34 +1,34 @@
 import React from 'react';
 import './App.css';
 
-const Button = ({ children, backgroundColor }) => {
-  return <button style={{ backgroundColor }}>{children}</button>
-};
+const Button = ({ type, children, ...buttonProps }) => {
+  const className = type === "primary" ? "PrimaryButton" : "SecondaryButton";
 
-const Alert = ({ children }) => {
   return (
-    <>
-      <div className="Overlay"></div>
-      <div className="Alert">{children}</div>
-    </>
+    <button className={`Button ${className}`} {...buttonProps}>{children}</button>
   );
 };
 
-const DeleteButton = () => {
-  return <Button backgroundColor="red">Delete</Button>;
-}
+const LoginButton = ({ type, children, ...buttonProps }) => {
+  return (
+    <Button
+      type="secondary"
+      {...buttonProps}
+      onClick={() => {
+        alert("logging in !");
+      }}
+    >{children}</Button>
+  );
+};
 
 function App() {
   return (
-    <div className='App'>
-      <header>Little Lemon Restaurant 🍕</header>
-      <Alert>
-        <h4>Delete Account</h4>
-        <p>Are you sure you want to proceed? You will miss all of our delicious recipes!</p>
-        <DeleteButton />
-      </Alert>
+    <div className="App">
+      <header className="Header">Little Lemon Restaurant 🍕</header>
+      <Button type="primary" onClick={() => alert("Signing up!")}>Sign Up</Button>
+      <LoginButton type="secondary" onClick={() => alert("Signing up!")}>Login</LoginButton>
     </div>
-  );
+  )
 }
 
 export default App;
