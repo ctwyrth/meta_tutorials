@@ -1,0 +1,1 @@
+data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0%200%20100%20100'><text y='.9em' font-size='90'>%F0%9F%97%9D%EF%B8%8F</text></svg>
