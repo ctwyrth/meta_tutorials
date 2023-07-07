@@ -45,7 +45,7 @@ const LandingSection = () => {
         .required("This is a required field."),
       comment: Yup.string()
         .trim()
-        .min(10, "Please provide more information in your comment.")
+        .min(25, "Please provide more information in your comment.")
         .required("This is a required field."),
     }),
     onSubmit: (values) => {
@@ -121,8 +121,8 @@ const LandingSection = () => {
                 />
                 {formik.touched.comment && formik.errors.comment ? <FormErrorMessage>{formik.errors.comment}</FormErrorMessage> : null}
               </FormControl>
-              <Button type="submit" colorScheme="purple" width="full">
-                Submit {isLoading ? ` 🔄` : null}
+              <Button type="submit" colorScheme="purple" width="full" isLoading={isLoading}>
+                Submit
               </Button>
             </VStack>
           </form>

@@ -36,20 +36,15 @@ const socials = [
 const Header = () => {
   let yMove = useRef(null);
   let lastYMove = 0;
-  let move = 0;
-
-  const slide = keyframes`
-    to {transform: translateY(${move}px)}
-  `;
   
   useEffect (() => {
     const handleScroll = () => {
       let currentYMove = window.scrollY;
 
       if (lastYMove - currentYMove < 0) {
-        yMove.current.chakraTranslateY = -200;
+        yMove.current.style.transform = "translateY(-200px)";
       } else if (lastYMove - currentYMove >= 0) {
-        yMove.current.chakraTranslateY = 0;
+        yMove.current.style.transform = "translateY(0px)";
       }
       lastYMove = currentYMove;
     }
