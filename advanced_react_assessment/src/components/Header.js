@@ -7,7 +7,7 @@ import {
   faMedium,
   faStackOverflow,
 } from "@fortawesome/free-brands-svg-icons";
-import { Box, HStack } from "@chakra-ui/react";
+import { Box, HStack, keyframes } from "@chakra-ui/react";
 
 const socials = [
   {
@@ -32,7 +32,35 @@ const socials = [
   },
 ];
 
+
 const Header = () => {
+  let yMove = useRef(null);
+  let lastYMove = 0;
+  let move = 0;
+
+  const slide = keyframes`
+    to {transform: translateY(${move}px)}
+  `;
+  
+  useEffect (() => {
+    const handleScroll = () => {
+      let currentYMove = window.scrollY;
+
+      if (lastYMove - currentYMove < 0) {
+        yMove.current.chakraTranslateY = -200;
+      } else if (lastYMove - currentYMove >= 0) {
+        yMove.current.chakraTranslateY = 0;
+      }
+      lastYMove = currentYMove;
+    }
+    
+    window.addEventListener("scroll", handleScroll);
+
+    return () => { 
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, [scrollY]);
+  
   const handleClick = (anchor) => () => {
     const id = `${anchor}-section`;
     const element = document.getElementById(id);
@@ -46,15 +74,17 @@ const Header = () => {
 
   return (
     <Box
+      ref={yMove}
       position="fixed"
       top={0}
       left={0}
       right={0}
       translateY={0}
-      transitionProperty="transform"
+      transitionProperty="all"
       transitionDuration=".3s"
       transitionTimingFunction="ease-in-out"
       backgroundColor="#18181b"
+      zIndex={100}
     >
       <Box color="white" maxWidth="1280px" margin="0 auto">
         <HStack
@@ -65,7 +95,7 @@ const Header = () => {
         >
           <nav>
             <HStack spacing={8}>
-              {socials && socials.map((social, idx) => <a href={social.url} key={idx}><FontAwesomeIcon icon={social.icon} size="2x" /></a>)}
+              {socials?.map((social, idx) => <a href={social.url} key={idx}><FontAwesomeIcon icon={social.icon} size="2x" /></a>)}
             </HStack>
           </nav>
           <nav>

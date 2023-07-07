@@ -10,3 +10,6 @@ let q = [1, 2, 3];
 q[10] = 10;
 
 console.log(q.length);
+
+q.length = 1;
+console.log(q);
