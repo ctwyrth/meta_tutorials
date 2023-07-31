@@ -19,14 +19,47 @@
 
 // console.log(q, r);
 
-const person = {
-  name: "Leonardo",
-};
+// let person = {
+//   name: "Leonardo",
+// };
 
-let animal = {
-  species: "snake",
-};
+// let animal = {
+//   species: "snake",
+// };
 
-person = animal;
+// person = { ...person, ...animal };
 
-console.log(person.species);
+// console.log(person.species);
+// console.log(person.name);
+// console.log(person);
+
+const arr = [1, 2, 3];
+
+console.log(arr);
+
+arr[-1] = 4;
+
+console.log(arr);
+console.log(arr.length);
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(i + " - " + arr[i]);
+}
+
+console.log(arr[-1]);
+console.log(arr[3]);
+
+arr[-2] = 5;
+
+console.log(arr);
+console.log(arr.length);
+
+arr[4] = 6;
+arr[5] = 7;
+
+console.log(arr);
+console.log(arr.length);
+
+for (let i = 0; i < arr.length; i++) {
+  console.log(i + " - " + arr[i]);
+}
