@@ -64,5 +64,40 @@
 //   console.log(i + " - " + arr[i]);
 // }
 
-const arr = new Set([1, 2, 3]);
-console.log(typeof arr);
+// const arr = new Set([1, 2, 3]);
+// console.log(typeof arr);
+
+// let a = 10;
+
+// function fun() {
+//   a = 1;
+
+//   return function() {
+//     a++;
+//     console.log(a);
+//   }
+// }
+
+// const f = fun();
+// console.log(f);
+// f();
+
+// function multiplyBy(factor) {
+//   return function(x) {
+//     return x * factor;
+//   }
+// }
+
+// const double = multiplyBy(2);
+// console.log(double(5));
+
+// const a = [null, , null];
+// console.log(a[1], typeof a[1]);
+
+let a = '5';
+let b = 2;
+// console.log(typeof a++);
+// console.log(a++);
+console.log(a+++b);
+// console.log(a + ++b);
+
